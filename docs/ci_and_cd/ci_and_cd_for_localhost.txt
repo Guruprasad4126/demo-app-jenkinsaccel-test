@@ -73,7 +73,7 @@ http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 Place the war into the webapps directory in Tomcat.  Doing so will boot up Jenkins.
 
-go to localhost:8080/jenkins once it has a few seconds to finish booting.
+go to localhost:8090/jenkins once it has a few seconds to finish booting.
 
 Choose "Install Suggested Plugins"
 
@@ -86,7 +86,7 @@ email: admin@test.com
 
 To install the Sidebar-Link plugin, go to:
 
-http://localhost:8080/jenkins/pluginManager/available
+http://localhost:8090/jenkins/pluginManager/available
 
 and search for "sidebar".  Choose Sidebar Link and "Install without restart"
 
@@ -101,7 +101,7 @@ a certain endpoint is hit.
 
 Download the command-line-interface (CLI) tool from Jenkins:
 
-http://localhost:8080/jenkins/jnlpJars/jenkins-cli.jar
+http://localhost:8090/jenkins/jnlpJars/jenkins-cli.jar
 
 Place it in the user's home directory (mine is C:\Users\byron)
 
@@ -113,7 +113,7 @@ Now, create the following file, at /fakecentralrepo/demo/hooks/post-receive
 # the following runs the jenkins-cli command located in the user's home directory
 # it uses admin as a username and admin as a password for Jenkins
 # this will kick off a build on the "demo" pipeline
-exec java -jar ~/jenkins-cli.jar -s http://localhost:8080/jenkins -auth admin:admin build demo
+exec java -jar ~/jenkins-cli.jar -s http://localhost:8090/jenkins -auth admin:admin build demo
 ------------------------ FILE END
 
 
@@ -127,7 +127,7 @@ Now let's create a pipeline so it does some actual work.
 - Check the box labeled "Do not allow concurrent builds".  (We don't want race conditions in our pipeline, and we don't want excessive memory usage on this demo machine)
 - Check the box for "Sidebar links". Add a link.  Enter this:
 
-  Link URL: http://localhost:8080/workspace/Demo/build/reports/bdd/cucumber-html-reports/overview-features.html
+  Link URL: http://localhost:8090/workspace/Demo/build/reports/bdd/cucumber-html-reports/overview-features.html
   Link Text: Cucumber report.
 
   Click Add Link.
@@ -137,37 +137,37 @@ Now let's create a pipeline so it does some actual work.
 
   Click Add Link.
 
-  Link URL: http://localhost:8080/workspace/Demo/build/reports/dependency-check-report.html
+  Link URL: http://localhost:8090/workspace/Demo/build/reports/dependency-check-report.html
   Link Text: Dependency check report
 
   Click Add Link.
 
-  Link URL: http://localhost:8080/demo
+  Link URL: http://localhost:8090/demo
   Link Text: Demo
 
   Click Add Link
 
-  Link URL: http://localhost:8080/workspace/Demo/build/reports/jacoco/index.html
+  Link URL: http://localhost:8090/workspace/Demo/build/reports/jacoco/index.html
   Link Text: Jacoco coverage report
 
   Click Add Link
 
-  Link URL: http://localhost:8080/workspace/Demo/build/reports/pitest/index.html
+  Link URL: http://localhost:8090/workspace/Demo/build/reports/pitest/index.html
   Link Text: Pitest Mutation Testing
 
   Click Add Link
 
-  Link URL: http://localhost:8080/workspace/Demo/build/docs/javadoc/index.html
+  Link URL: http://localhost:8090/workspace/Demo/build/docs/javadoc/index.html
   Link Text: Javadoc
 
   Click Add Link
 
-  Link URL: http://training:8080/workspace/Demo/perf_report/index.html
+  Link URL: http://training:8090/workspace/Demo/perf_report/index.html
   Link Text: Performance report
 
   Click Add Link
 
-  Link URL: http://training:8080/workspace/Demo/build/reports/zap/zap-report.html
+  Link URL: http://training:8090/workspace/Demo/build/reports/zap/zap-report.html
   Link Text: Zap report
 
 - Under Pipeline, click on the dropdown and select "Pipeline script from SCM"
@@ -184,6 +184,6 @@ Now let's create a pipeline so it does some actual work.
 Congratulations!  You should now be able to run a full pipeline.
 
 Summary:
-Jenkins is at http://localhost:8080/jenkins/
-Demo is at http://localhost:8080/demo/
+Jenkins is at http://localhost:8090/jenkins/
+Demo is at http://localhost:8090/demo/
 Sonarqube is at http://localhost:9000/

@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 
 SERVER = "localhost"
-URL = "http://%s:8080" % SERVER
+URL = "http://%s:8090" % SERVER
 
 
 def before_all(context):

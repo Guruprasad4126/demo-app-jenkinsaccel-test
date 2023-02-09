@@ -677,7 +677,7 @@ First, start up the application server:
 gradlew apprun
 ```
 
-go to `http://localhost:8080/demo/console`
+go to `http://localhost:8090/demo/console`
 
 For the URL: 
 
@@ -726,7 +726,7 @@ AND b.title = 'a book';
 ```
 
 Let's test that out by lending out a book.  This can be easily done in the 
-UI (go to `http://localhost:8080/demo/library.html )
+UI (go to `http://localhost:8090/demo/library.html )
 
 Add a book, `"a book"`, and add a borrower `"alice"`, and loan the book.
   
@@ -1821,7 +1821,7 @@ The following will open a browser and assign control to a variable "driver"
 Go to the Demo application:
 
 ```python
->>> driver.get("http://localhost:8080/demo/library.html")
+>>> driver.get("http://localhost:8090/demo/library.html")
 ```
 
 Select the library return field:
@@ -1885,7 +1885,7 @@ BDD testing framework):
   from behave import given, when, then
   from hamcrest import *
 
-  URL = 'http://localhost:8080/demo/library.html'
+  URL = 'http://localhost:8090/demo/library.html'
 
 
   @given('a borrower had checked out a book,')
@@ -1987,7 +1987,7 @@ You should now see that there is a new line,
 
 Go ahead and play around with the new feature, at 
 
-    http://localhost:8080/demo/library.html.  
+    http://localhost:8090/demo/library.html.  
 
 You have coverage for all aspects, from UI to underlying behavior, API testing, 
 Database testing, unit testing.

@@ -15,7 +15,7 @@ from hamcrest import *
 import time
 
 SERVER = "localhost"
-URL = "http://%s:8080" % SERVER
+URL = "http://%s:8090" % SERVER
 HOMEPAGE = "%s/demo/library.html" % URL
 RESET_DATABASE = "%s/demo/flyway" % URL
 DEFAULT_BORROWER = "alice"
@@ -30,7 +30,7 @@ class TestBasic():
     self.driver.quit()
   
   def test_basic_lend_book(self):
-    self.driver.get("http://localhost:8080/demo/library.html")
+    self.driver.get("http://localhost:8090/demo/library.html")
     self.driver.find_element(By.CSS_SELECTOR, ".button-form:nth-child(4) > input").click()
     self.driver.find_element(By.LINK_TEXT, "Return").click()
     self.driver.find_element(By.ID, "register_book").click()

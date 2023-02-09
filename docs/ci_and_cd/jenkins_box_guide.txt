@@ -218,7 +218,7 @@ then restart the server:
 
 $ sudo systemctl restart jenkins
 
-In your browser, go to Jenkins at this URL: http://jenkinsbox:8080/
+In your browser, go to Jenkins at this URL: http://jenkinsbox:8090/
 
 Once Jenkins boots up, you will need the password for the new Jenkins, here:
 
@@ -239,7 +239,7 @@ Click Start using Jenkins
 
 Install the Sidebar-Link plugin.  Go to:
 
-http://jenkinsbox:8080/pluginManager/available
+http://jenkinsbox:8090/pluginManager/available
 
 and search for "sidebar".  Choose Sidebar Link and Install without restart.
 
@@ -292,14 +292,14 @@ CONFIGURE PIPELINE TO RUN AT GIT RECEIVE
 
 Download the command-line-interface (CLI) tool from Jenkins:
 
-curl http://localhost:8080/jnlpJars/jenkins-cli.jar > ~/jenkins-cli.jar
+curl http://localhost:8090/jnlpJars/jenkins-cli.jar > ~/jenkins-cli.jar
 
 Now, create the following file, at ~/demo/hooks/post-receive
 
 ------------------------ FILE START
 #!/bin/sh
 
-exec java -jar ~/jenkins-cli.jar -s http://localhost:8080/ -auth admin:admin build demo
+exec java -jar ~/jenkins-cli.jar -s http://localhost:8090/ -auth admin:admin build demo
 ------------------------ FILE END
 
 make that file executable:
@@ -430,7 +430,7 @@ go to http://jenkinsbox:9000/about and check if you see the Sonarqube dashboard.
 If that is up and running, let's go back to Jenkins and install a
 plugin so we can run SonarQube on our code from there.  Go to:
 
-http://jenkinsbox:8080/pluginManager/available
+http://jenkinsbox:8090/pluginManager/available
 
 and search for Sonarqube in the top right.  You should see "SonarQube scanner"
 as an option.  Check that on, then Install without restart.

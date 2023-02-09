@@ -9,7 +9,7 @@ See README.md in the root directory for further detail
 
 To run tests:
 
-    First, make sure the Demo application is already running, check at http://localhost:8080/demo/
+    First, make sure the Demo application is already running, check at http://localhost:8090/demo/
 
     Then, to run these tests,
         1. Open the solution with Visual Studio 2019

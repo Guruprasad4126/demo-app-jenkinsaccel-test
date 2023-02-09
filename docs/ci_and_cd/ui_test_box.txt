@@ -269,7 +269,7 @@ Now you can start the Apache Tomcat 9 server and enable it to start on boot time
 $ sudo systemctl start tomcat9
 $ sudo systemctl enable tomcat9
 
-Tomcat will start serving on port 8080 on the machine.
+Tomcat will start serving on port 8090 on the machine.
 
 INSTALLING OWASP-ZAP
 --------------------
@@ -288,7 +288,7 @@ On the menu bar, under Help, click on "Check for updates..." and update as sugge
 Change the port number so it doesn't interfere with our demo application:
 
 Open ZAP, Tools--> Options --> local proxies
-Change the default 8080 port to 8888 and click Ok.
+Change the default 8090 port to 8888 and click Ok.
 
 Configure Zap to run as a proxy at boot:
 
@@ -315,13 +315,13 @@ By the way, details on creating your own systemd script can be found here: https
 
 In order to test out Zap, in the Quick Start tab, enter the following URL
 
-URL to attack: http://localhost:8080/demo
+URL to attack: http://localhost:8090/demo
 
 Then, click Attack.
 
 To do the same thing from the command line, run this:
 
-/usr/share/owasp-zap/zap.sh -cmd -quickurl http://localhost:8080/demo
+/usr/share/owasp-zap/zap.sh -cmd -quickurl http://localhost:8090/demo
 
 
 CUSTOMIZE HOSTS FILE

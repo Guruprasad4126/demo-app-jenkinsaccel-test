@@ -32,7 +32,7 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            driver.Navigate().GoToUrl("http://localhost:8080/demo/library.html");
+            driver.Navigate().GoToUrl("http://localhost:8090/demo/library.html");
             driver.FindElement(By.CssSelector(".button-form:nth-child(4) > input")).Click();
             driver.FindElement(By.LinkText("Return")).Click();
             driver.FindElement(By.Id("register_book")).Click();
